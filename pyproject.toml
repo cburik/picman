@@ -4,4 +4,24 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.1",
+    "pre-commit>=4.5.1",
+    "pytest>=9.0.2",
+    "ruff>=0.15.4",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+ignore = [
+    "D",       # pydocstyle (require docstrings everywhere)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101", "PLR2004"]
