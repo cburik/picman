@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "picman"
 version = "0.1.0"
-description = "Add your description here"
+description = "Picman, my personal picture management tool"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
