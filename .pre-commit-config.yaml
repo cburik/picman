@@ -1,0 +1,31 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: check-yaml
+      - id: check-json
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: detect-private-key
+      # - id: no-commit-to-branch
+      #   args: ['--branch', 'main']
+
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.10.2
+    hooks:
+      - id: uv-lock
+
+  - repo: https://github.com/tsvikas/sync-with-uv
+    rev: v0.3.0
+    hooks:
+      - id: sync-with-uv
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.15.2
+    hooks:
+      # Run the linter.
+      - id: ruff-check
+      # Run the formatter.
+      - id: ruff-format
