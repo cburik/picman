@@ -41,8 +41,5 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Install the dependencies and project
-        run: uv sync --locked --all-extras --dev
-
       - name: Run Precommit
         uses: pre-commit/action@v3.0.0
