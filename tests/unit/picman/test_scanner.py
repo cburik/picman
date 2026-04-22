@@ -46,8 +46,17 @@ def test_scan_accumulates_all_image_paths(tmp_path):
 
 
 def test_scan_raises_for_missing_path(tmp_path):
-    missing = tmp_path / "does-not-exist"
+    missing = tmp_path / "does-not-exist/"
     scanner = Scanner()
 
     with pytest.raises(FileNotFoundError):
         scanner.scan(missing)
+
+
+def test_scan_raises_for_non_directory(tmp_path):
+    file_path = tmp_path / "file.txt"
+    file_path.write_text("not a directory")
+    scanner = Scanner()
+
+    with pytest.raises(NotADirectoryError):
+        scanner.scan(file_path)
