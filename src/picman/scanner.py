@@ -14,6 +14,8 @@ class Scanner:
         self.all_image_paths: list[Path] = []
 
     def scan(self, path: Path) -> list[Path]:
+        if not path.is_dir():
+            raise NotADirectoryError(f"Path is not a directory: {path}")
         if not path.exists():
             raise FileNotFoundError(f"Path does not exist: {path}")
 
